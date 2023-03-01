@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ꜱʜᴏᴅᴀɴ'ꜱ xꜱꜱ ɪɴ ᴄꜱꜱ ᴘᴏᴄ</title>
+    <style>
+        body{
+            background-image: url('https://assets.bizclikmedia.net/553/5d97e858f9ba7370c3a74c18eb840f44:028a29555570b9e8afe229cdb4fc0cc3/screenshot-41.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+	    color: white;
+        }
+        body > *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            border: 5px solid black;
+            border-radius: 3%;
+            width: fit-content;
+	    color: white;
+        }
+        input[type=text]{
+            width: 250px;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1>Background changer!</h1>
+    <p>Drop a url to an image in the field below, and the image will become the new background image! :)</p>
+    <form>
+        <input type="text" id="url" placeholder="insert an image URL here!">
+        &nbsp;
+        <input type="button" value="Change URL!" onclick="changeBackground()">
+    </form>
+    <script>
+	function loadFile(filePath) {
+  		var result = null;
+  		var xmlhttp = new XMLHttpRequest();
+  		xmlhttp.open("GET", filePath, false);
+  		xmlhttp.send();
+  		if (xmlhttp.status==200) {
+    			result = xmlhttp.responseText;
+  		}
+  		return result;
+	}
+
+        function changeBackground(){
+            let url = document.getElementById('url').value;
+            
+            if(url != ""){
+		var fr = new FileReader();
+                console.log("Changing Background Image! >>>> url('"+url+"')");
+		document.getElementsByTagName('style')[0].innerHTML="body{\nbackground-image: url('"+url+"');\nbackground-repeat: no-repeat;\nbackground-size: 100%;\ncolor: white;\n}\n "+loadFile("./stylesheet.css") ;
+		//document.getElementById('body').style.backgroundImage = "url('" + url + "')";
+            }
+        }
+    </script>
+</body>
+</html>
