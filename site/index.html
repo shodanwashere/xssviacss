@@ -49,10 +49,9 @@
             let url = document.getElementById('url').value;
             
             if(url != ""){
-		var fr = new FileReader();
                 console.log("Changing Background Image! >>>> url('"+url+"')");
-		document.getElementsByTagName('style')[0].innerHTML="body{\nbackground-image: url('"+url+"');\nbackground-repeat: no-repeat;\nbackground-size: 100%;\ncolor: white;\n}\n "+loadFile("./stylesheet.css") ;
-		//document.getElementById('body').style.backgroundImage = "url('" + url + "')";
+		        document.getElementsByTagName('style')[0].innerHTML="body{background-image: url('"+url+"'); background-repeat: no-repeat; background-size: 100%; color: white;}"+ loadFile("./stylesheet.css") ;
+		        //document.getElementById('body').style.backgroundImage = "url('" + url + "')";
             }
         }
     </script>
