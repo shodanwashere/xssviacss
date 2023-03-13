@@ -1,7 +1,14 @@
+@font-face {
+  font-family: SansForgetica;
+  src: url("SansForgetica-Regular.otf") format("opentype");
+}
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+
+    font-family: SansForgetica;
   }
 
   main {
