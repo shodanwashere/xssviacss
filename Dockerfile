@@ -1,4 +1,4 @@
-FROM nginx
+FROM httpd:latest
 
-RUN rm /usr/share/nginx/html/*
-COPY site/ /usr/share/nginx/html/
+RUN rm /usr/local/apache2/htdocs/*
+COPY site/ /usr/local/apache2/htdocs/
