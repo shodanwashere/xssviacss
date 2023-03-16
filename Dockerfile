@@ -1,4 +1,5 @@
-FROM httpd:latest
+FROM php:7.4.30-apache
 
-RUN rm /usr/local/apache2/htdocs/*
-COPY site/ /usr/local/apache2/htdocs/
+#RUN rm /var/www/html/*
+COPY site/ /var/www/html
+EXPOSE 80
